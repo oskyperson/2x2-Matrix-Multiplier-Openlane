@@ -38,5 +38,14 @@
     "CLOCK_PERIOD": 100,
 
     "//": "Add more configuration variables until design hardens with no errors",
-    "//": "Try experimenting with different variable values as well"
+    "//": "Try experimenting with different variable values as well",
+
+    "//": "Core Utilization Percentage",
+    "FP_CORE_UTIL": 40,
+
+    "//": "Limits layers to use",
+    "FP_PDN_MULTILAYER": false,
+
+    "//": "Relax transition constraint",
+    "MAX_TRANSITION_CONSTRAINT": 10
 }
