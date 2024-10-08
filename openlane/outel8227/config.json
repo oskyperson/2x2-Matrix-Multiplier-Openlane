@@ -35,13 +35,13 @@
         "dir::../../verilog/rtl/outel8227/dataflow/bridge.sv"
     ],
     "CLOCK_PORT": "clk",
-    "CLOCK_PERIOD": 100,
+    "CLOCK_PERIOD": 25,
 
     "//": "Add more configuration variables until design hardens with no errors",
     "//": "Try experimenting with different variable values as well",
 
     "//": "Core Utilization Percentage",
-    "FP_CORE_UTIL": 40,
+    "FP_CORE_UTIL": 50,
 
     "//": "Limits layers to use",
     "FP_PDN_MULTILAYER": false,
