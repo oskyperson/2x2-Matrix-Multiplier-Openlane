@@ -1,4 +1,3 @@
-
 module pwm_wrapper#(
     parameter NUM_CHANNELS = 2   
 )(

@@ -1,0 +1,24 @@
+{
+    "//": "Basics", 
+    "DESIGN_NAME": "pwm_wrapper",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/pwm_aftx07/bus_protocol_if.sv",
+        "dir::../../verilog/rtl/pwm_aftx07/flex_counter.sv",
+        "dir::../../verilog/rtl/pwm_aftx07/pwm_wrapper.sv",
+        "dir::../../verilog/rtl/pwm_aftx07/pwmchannel.sv"
+    ],
+    "CLOCK_PORT": "CLK",
+    "CLOCK_PERIOD": 25,
+
+    "//": "Add more configuration variables until design hardens with no errors",
+    "//": "Try experimenting with different variable values as well",
+
+    "//": "Core Utilization Percentage",
+    "FP_CORE_UTIL": 50,
+
+    "//": "Limits layers to use",
+    "FP_PDN_MULTILAYER": false,
+
+    "//": "Relax transition constraint",
+    "MAX_TRANSITION_CONSTRAINT": 1
+}
