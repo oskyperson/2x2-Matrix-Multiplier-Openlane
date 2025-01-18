@@ -47,5 +47,5 @@
     "FP_PDN_MULTILAYER": false,
 
     "//": "Relax transition constraint",
-    "MAX_TRANSITION_CONSTRAINT": 10
+    "MAX_TRANSITION_CONSTRAINT": 1.5
 }
