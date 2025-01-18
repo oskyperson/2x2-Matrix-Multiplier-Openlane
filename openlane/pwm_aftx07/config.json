@@ -25,7 +25,8 @@
     "FP_SIZING": "absolute",
     "DIE_AREA": [0,0,300,300],
 
-    "//": "Optimizations on antenna",
+    "//": "Optimizations and antenna fixing",
     "RUN_POST_GRT_DESIGN_REPAIR": true,
-    "RUN_HEURISTIC_DIODE_INSERTION": true
+    "RUN_HEURISTIC_DIODE_INSERTION": true,
+    "GRT_ANTENNA_ITERS": 10
 }
