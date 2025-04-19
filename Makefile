@@ -5,7 +5,9 @@ export PROJECT_ROOT=$(shell pwd)
 export OPENLANE2_ROOT=$(HOME)/openlane2
 
 # Change PDK_ROOT if your PDK root is not the default
-export PDK_ROOT=$(HOME)/.volare
+export VOLARE_ROOT = $(HOME)/.volare/volare
+export PDK_VERSION = 0fe599b2afb6708d281543108caf8310912f54af
+export PDK_ROOT = $(VOLARE_ROOT)/sky130/versions/$(PDK_VERSION)
 export PDK = sky130A
 export PDK_PATH = $(PDK_ROOT)/$(PDK)
 
@@ -75,7 +77,7 @@ $(designs) : % : $(PROJECT_ROOT)/openlane/%/config.json
 gdsview_%_klayout:
 	@if echo "$(designs)" | grep -qw "$*"; then \
 		if [ -f "$(PROJECT_ROOT)/gds/$*.gds" ]; then \
-			echo "Open GDSII layout of $* in KLayout..."; \
+			echo "Opening GDSII layout of $* in KLayout..."; \
 			nix-shell --run $(klayout_cmd) --pure $(OPENLANE2_ROOT)/shell.nix; \
 		else \
 			echo "Error: Design $* exists, but no GDSII file found"; \
@@ -85,5 +87,12 @@ gdsview_%_klayout:
 		echo "Error: Design $* does not exist"; \
 		false; \
 	fi
+
+# Clean temporary files from previous OpenLane runs (i.e., "runs" folder)
+.PHONY: clean
+clean:
+	@echo "Removing files of previous OpenLane runs of all designs...\n"
+	@find openlane/*/ -maxdepth 1 -type d -name runs -exec rm -rf {} +
+	@echo "Done!\n"
 
 # TODO: Add more targets for other tasks (maybe even more Caravel targets)
