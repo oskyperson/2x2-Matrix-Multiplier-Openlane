@@ -5,9 +5,10 @@ export PROJECT_ROOT=$(shell pwd)
 export OPENLANE2_ROOT=$(HOME)/openlane2
 
 # Change PDK_ROOT if your PDK root is not the default
-export PDK_ROOT=$(HOME)/.volare
+export PDK_ROOT=$(HOME)/.volare/volare/sky130/versions/0fe599b2afb6708d281543108caf8310912f54af
 export PDK = sky130A
 export PDK_PATH = $(PDK_ROOT)/$(PDK)
+
 
 # Identify names of existing designs
 designs = $(shell cd openlane && find * -maxdepth 0 -type d)
@@ -87,3 +88,4 @@ gdsview_%_klayout:
 	fi
 
 # TODO: Add more targets for other tasks (maybe even more Caravel targets)
+

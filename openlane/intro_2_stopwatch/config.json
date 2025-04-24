@@ -1,0 +1,15 @@
+{
+    "//": "Basics",
+    "DESIGN_NAME": "intro_2_stopwatch",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/intro_2_stopwatch/source/intro_2_stopwatch.sv",
+        "dir::../../verilog/rtl/intro_2_stopwatch/source/bcd_counter.sv",
+        "dir::../../verilog/rtl/intro_2_stopwatch/source/fsm.sv",
+        "dir::../../verilog/rtl/intro_2_stopwatch/source/timer.sv",
+        "dir::../../verilog/rtl/intro_2_stopwatch/source/seg_scan.sv",
+        "dir::../../verilog/rtl/intro_2_stopwatch/source/decoder.sv",
+        "dir::../../verilog/rtl/intro_2_stopwatch/source/synch_edge_det.sv"
+    ],
+    "CLOCK_PERIOD": 10,
+    "CLOCK_PORT": "CLK_100MHZ"
+}
