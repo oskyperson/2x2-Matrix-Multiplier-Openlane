@@ -1,0 +1,727 @@
+library (top) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1A";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : 25.0;
+  nom_voltage                    : 1.80;
+
+  lu_table_template(template_1) {
+    variable_1 : total_output_net_capacitance;
+    index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+  }
+  type ("keypad_i") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 14;
+    bit_from : 13;
+    bit_to : 0;
+  }
+
+  cell ("top") {
+    area : 11192.028 
+    is_macro_cell : true;
+    pin("clk") {
+      direction : input;
+      clock : true;
+      capacitance : 0.0256;
+      timing() {
+        timing_sense : positive_unate;
+        timing_type : min_clock_tree_path;
+	cell_rise(scalar) {
+          values("0.48001");
+	}
+	cell_fall(scalar) {
+          values("0.41022");
+	}
+      }
+      timing() {
+        timing_sense : positive_unate;
+        timing_type : max_clock_tree_path;
+	cell_rise(scalar) {
+          values("0.49205");
+	}
+	cell_fall(scalar) {
+          values("0.41918");
+	}
+      }
+    }
+    pin("n_rst") {
+      direction : input;
+      capacitance : 0.0035;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.53460");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("0.44265");
+	}
+      }
+    }
+    pin("pwm") {
+      direction : output;
+      capacitance : 0.0007;
+      timing() {
+        related_pin : "keypad_i[13]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.62160,0.62660,0.63864,0.66810,0.74853,0.98165,1.66618");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.36497,1.36976,1.38004,1.40107,1.44643,1.56254,1.89687");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[12]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.62445,0.62944,0.64149,0.67095,0.75138,0.98450,1.66902");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.29986,1.30465,1.31493,1.33596,1.38132,1.49743,1.83176");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[11]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.65031,0.65530,0.66735,0.69681,0.77723,1.01035,1.69488");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.42795,1.43273,1.44301,1.46404,1.50940,1.62551,1.95984");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[10]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.63775,0.64274,0.65479,0.68425,0.76467,0.99779,1.68232");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.40456,1.40934,1.41963,1.44065,1.48601,1.60212,1.93645");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[9]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.67926,0.68426,0.69631,0.72577,0.80619,1.03931,1.72384");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.40369,1.40847,1.41876,1.43978,1.48514,1.60125,1.93558");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[8]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.68067,0.68567,0.69772,0.72718,0.80760,1.04072,1.72525");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.33764,1.34242,1.35270,1.37373,1.41909,1.53520,1.86953");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[7]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.68278,0.68778,0.69983,0.72928,0.80971,1.04283,1.72736");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.45442,1.45920,1.46949,1.49051,1.53588,1.65199,1.98631");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[6]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.68989,0.69488,0.70693,0.73639,0.81682,1.04993,1.73446");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.44058,1.44536,1.45564,1.47667,1.52203,1.63814,1.97247");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[5]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.60908,0.61408,0.62613,0.65558,0.73601,0.96913,1.65366");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.27592,1.28070,1.29098,1.31201,1.35737,1.47348,1.80781");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[4]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.59947,0.60447,0.61652,0.64597,0.72640,0.95952,1.64405");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.20496,1.20975,1.22003,1.24106,1.28642,1.40253,1.73686");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[3]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.60981,0.61481,0.62686,0.65631,0.73674,0.96986,1.65439");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.32571,1.33050,1.34078,1.36181,1.40717,1.52328,1.85761");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[2]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.62523,0.63023,0.64228,0.67173,0.75216,0.98528,1.66981");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("1.31575,1.32053,1.33081,1.35184,1.39720,1.51331,1.84764");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[1]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.46855,0.47354,0.48559,0.51505,0.59548,0.82860,1.51312");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.56817,0.57296,0.58324,0.60427,0.64963,0.76574,1.10006");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+      timing() {
+        related_pin : "keypad_i[0]";
+        timing_sense : positive_unate;
+        timing_type : combinational;
+	cell_rise(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.44431,0.44931,0.46136,0.49081,0.57124,0.80436,1.48889");
+	}
+	rise_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01731,0.02174,0.03423,0.07132,0.18451,0.52131,1.50663");
+	}
+	cell_fall(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.53784,0.54262,0.55290,0.57393,0.61929,0.73540,1.06973");
+	}
+	fall_transition(template_1) {
+          index_1("0.00050,  0.00146,  0.00429,  0.01257,  0.03681,  0.10783,  0.31587");
+          values("0.01774,0.02062,0.02791,0.04576,0.09393,0.24243,0.69514");
+	}
+      }
+    }
+    bus("keypad_i") {
+      bus_type : keypad_i;
+      direction : input;
+      capacitance : 0.0000;
+    pin("keypad_i[13]") {
+      direction : input;
+      capacitance : 0.0027;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.35950");
+	}
+	fall_constraint(scalar) {
+          values("0.37193");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.33442");
+	}
+	fall_constraint(scalar) {
+          values("-0.30376");
+	}
+      }
+    }
+    pin("keypad_i[12]") {
+      direction : input;
+      capacitance : 0.0028;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.35404");
+	}
+	fall_constraint(scalar) {
+          values("0.36828");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.32885");
+	}
+	fall_constraint(scalar) {
+          values("-0.30004");
+	}
+      }
+    }
+    pin("keypad_i[11]") {
+      direction : input;
+      capacitance : 0.0030;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.33653");
+	}
+	fall_constraint(scalar) {
+          values("0.35672");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.31096");
+	}
+	fall_constraint(scalar) {
+          values("-0.28822");
+	}
+      }
+    }
+    pin("keypad_i[10]") {
+      direction : input;
+      capacitance : 0.0028;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.34787");
+	}
+	fall_constraint(scalar) {
+          values("0.36429");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.32253");
+	}
+	fall_constraint(scalar) {
+          values("-0.29595");
+	}
+      }
+    }
+    pin("keypad_i[9]") {
+      direction : input;
+      capacitance : 0.0030;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.35418");
+	}
+	fall_constraint(scalar) {
+          values("0.36851");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.32903");
+	}
+	fall_constraint(scalar) {
+          values("-0.30029");
+	}
+      }
+    }
+    pin("keypad_i[8]") {
+      direction : input;
+      capacitance : 0.0030;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.35018");
+	}
+	fall_constraint(scalar) {
+          values("0.36574");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.32493");
+	}
+	fall_constraint(scalar) {
+          values("-0.29745");
+	}
+      }
+    }
+    pin("keypad_i[7]") {
+      direction : input;
+      capacitance : 0.0030;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.34358");
+	}
+	fall_constraint(scalar) {
+          values("0.35713");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.31826");
+	}
+	fall_constraint(scalar) {
+          values("-0.28889");
+	}
+      }
+    }
+    pin("keypad_i[6]") {
+      direction : input;
+      capacitance : 0.0030;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.33797");
+	}
+	fall_constraint(scalar) {
+          values("0.35357");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.31252");
+	}
+	fall_constraint(scalar) {
+          values("-0.28525");
+	}
+      }
+    }
+    pin("keypad_i[5]") {
+      direction : input;
+      capacitance : 0.0030;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.33549");
+	}
+	fall_constraint(scalar) {
+          values("0.35361");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.30995");
+	}
+	fall_constraint(scalar) {
+          values("-0.28520");
+	}
+      }
+    }
+    pin("keypad_i[4]") {
+      direction : input;
+      capacitance : 0.0032;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.34050");
+	}
+	fall_constraint(scalar) {
+          values("0.35677");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.31510");
+	}
+	fall_constraint(scalar) {
+          values("-0.28844");
+	}
+      }
+    }
+    pin("keypad_i[3]") {
+      direction : input;
+      capacitance : 0.0027;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.33659");
+	}
+	fall_constraint(scalar) {
+          values("0.35377");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.31105");
+	}
+	fall_constraint(scalar) {
+          values("-0.28535");
+	}
+      }
+    }
+    pin("keypad_i[2]") {
+      direction : input;
+      capacitance : 0.0033;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.32359");
+	}
+	fall_constraint(scalar) {
+          values("0.34580");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.29782");
+	}
+	fall_constraint(scalar) {
+          values("-0.27723");
+	}
+      }
+    }
+    pin("keypad_i[1]") {
+      direction : input;
+      capacitance : 0.0027;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.30372");
+	}
+	fall_constraint(scalar) {
+          values("0.33316");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.27743");
+	}
+	fall_constraint(scalar) {
+          values("-0.26427");
+	}
+      }
+    }
+    pin("keypad_i[0]") {
+      direction : input;
+      capacitance : 0.0028;
+      timing() {
+        related_pin : "clk";
+        timing_type : hold_rising;
+	rise_constraint(scalar) {
+          values("0.32291");
+	}
+	fall_constraint(scalar) {
+          values("0.34583");
+	}
+      }
+      timing() {
+        related_pin : "clk";
+        timing_type : setup_rising;
+	rise_constraint(scalar) {
+          values("-0.29707");
+	}
+	fall_constraint(scalar) {
+          values("-0.27723");
+	}
+      }
+    }
+    }
+  }
+
+}
