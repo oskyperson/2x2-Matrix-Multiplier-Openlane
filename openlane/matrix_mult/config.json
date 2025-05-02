@@ -1,0 +1,9 @@
+{
+    "//": "Basics",
+    "DESIGN_NAME": "matrix_mult",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/matrix_mult/source/matrix_mult.sv"
+    ],
+    "CLOCK_PERIOD": 100,
+    "CLOCK_PORT": "clk"
+}
