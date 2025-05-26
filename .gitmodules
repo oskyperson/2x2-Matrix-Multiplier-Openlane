@@ -1,3 +1,7 @@
 [submodule "verilog/rtl/intro_2_stopwatch"]
 	path = verilog/rtl/intro_2_stopwatch
 	url = git@github.com:Purdue-SoCET/intro-2-stopwatch.git
+
+[submodule "verilog/rtl/matrix_mult"]
+	path = verilog/rtl/matrix_mult
+	url = git@github.com:Purdue-SoCET/MatrixMult.git
