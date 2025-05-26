@@ -6,7 +6,7 @@ MACRO calculator_top
   CLASS BLOCK ;
   FOREIGN calculator_top ;
   ORIGIN 0.000 0.000 ;
-  SIZE 218.065 BY 228.785 ;
+  SIZE 218.215 BY 228.935 ;
   PIN ColOut[0]
     DIRECTION OUTPUT ;
     USE SIGNAL ;
@@ -31,7 +31,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 0.000 64.640 4.000 65.240 ;
+        RECT 0.000 54.440 4.000 55.040 ;
     END
   END ColOut[2]
   PIN ColOut[3]
@@ -49,7 +49,7 @@ MACRO calculator_top
     ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
-        RECT 0.000 74.840 4.000 75.440 ;
+        RECT 0.000 78.240 4.000 78.840 ;
     END
   END RowIn[0]
   PIN RowIn[1]
@@ -58,7 +58,7 @@ MACRO calculator_top
     ANTENNAGATEAREA 0.196500 ;
     PORT
       LAYER met3 ;
-        RECT 0.000 78.240 4.000 78.840 ;
+        RECT 0.000 74.840 4.000 75.440 ;
     END
   END RowIn[1]
   PIN RowIn[2]
@@ -125,7 +125,7 @@ MACRO calculator_top
     ANTENNAGATEAREA 0.852000 ;
     PORT
       LAYER met3 ;
-        RECT 0.000 210.840 4.000 211.440 ;
+        RECT 0.000 207.440 4.000 208.040 ;
     END
   END clk
   PIN complete
@@ -133,8 +133,8 @@ MACRO calculator_top
     USE SIGNAL ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
-      LAYER met3 ;
-        RECT 0.000 129.240 4.000 129.840 ;
+      LAYER met2 ;
+        RECT 103.130 224.935 103.410 228.935 ;
     END
   END complete
   PIN display_output[0]
@@ -143,7 +143,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met2 ;
-        RECT 103.130 224.785 103.410 228.785 ;
+        RECT 87.030 224.935 87.310 228.935 ;
     END
   END display_output[0]
   PIN display_output[10]
@@ -152,7 +152,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 149.640 218.065 150.240 ;
+        RECT 214.215 132.640 218.215 133.240 ;
     END
   END display_output[10]
   PIN display_output[11]
@@ -161,7 +161,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 115.640 218.065 116.240 ;
+        RECT 214.215 156.440 218.215 157.040 ;
     END
   END display_output[11]
   PIN display_output[12]
@@ -170,7 +170,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 146.240 218.065 146.840 ;
+        RECT 214.215 122.440 218.215 123.040 ;
     END
   END display_output[12]
   PIN display_output[13]
@@ -179,7 +179,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 125.840 218.065 126.440 ;
+        RECT 214.215 142.840 218.215 143.440 ;
     END
   END display_output[13]
   PIN display_output[14]
@@ -188,7 +188,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 142.840 218.065 143.440 ;
+        RECT 214.215 125.840 218.215 126.440 ;
     END
   END display_output[14]
   PIN display_output[15]
@@ -197,7 +197,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met2 ;
-        RECT 99.910 224.785 100.190 228.785 ;
+        RECT 99.910 224.935 100.190 228.935 ;
     END
   END display_output[15]
   PIN display_output[1]
@@ -206,7 +206,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met2 ;
-        RECT 106.350 224.785 106.630 228.785 ;
+        RECT 96.690 224.935 96.970 228.935 ;
     END
   END display_output[1]
   PIN display_output[2]
@@ -215,7 +215,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met2 ;
-        RECT 112.790 224.785 113.070 228.785 ;
+        RECT 112.790 224.935 113.070 228.935 ;
     END
   END display_output[2]
   PIN display_output[3]
@@ -224,7 +224,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met2 ;
-        RECT 119.230 224.785 119.510 228.785 ;
+        RECT 116.010 224.935 116.290 228.935 ;
     END
   END display_output[3]
   PIN display_output[4]
@@ -232,8 +232,8 @@ MACRO calculator_top
     USE SIGNAL ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
-      LAYER met3 ;
-        RECT 214.065 122.440 218.065 123.040 ;
+      LAYER met2 ;
+        RECT 125.670 224.935 125.950 228.935 ;
     END
   END display_output[4]
   PIN display_output[5]
@@ -242,7 +242,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 139.440 218.065 140.040 ;
+        RECT 214.215 129.240 218.215 129.840 ;
     END
   END display_output[5]
   PIN display_output[6]
@@ -250,8 +250,8 @@ MACRO calculator_top
     USE SIGNAL ;
     ANTENNADIFFAREA 0.445500 ;
     PORT
-      LAYER met3 ;
-        RECT 214.065 119.040 218.065 119.640 ;
+      LAYER met2 ;
+        RECT 144.990 224.935 145.270 228.935 ;
     END
   END display_output[6]
   PIN display_output[7]
@@ -260,7 +260,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 136.040 218.065 136.640 ;
+        RECT 214.215 136.040 218.215 136.640 ;
     END
   END display_output[7]
   PIN display_output[8]
@@ -269,7 +269,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 129.240 218.065 129.840 ;
+        RECT 214.215 139.440 218.215 140.040 ;
     END
   END display_output[8]
   PIN display_output[9]
@@ -278,7 +278,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 132.640 218.065 133.240 ;
+        RECT 214.215 146.240 218.215 146.840 ;
     END
   END display_output[9]
   PIN input_state_FPGA[0]
@@ -287,7 +287,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 0.000 125.840 4.000 126.440 ;
+        RECT 0.000 105.440 4.000 106.040 ;
     END
   END input_state_FPGA[0]
   PIN input_state_FPGA[1]
@@ -296,7 +296,7 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 0.000 115.640 4.000 116.240 ;
+        RECT 0.000 108.840 4.000 109.440 ;
     END
   END input_state_FPGA[1]
   PIN input_state_FPGA[2]
@@ -314,16 +314,16 @@ MACRO calculator_top
     ANTENNADIFFAREA 0.445500 ;
     PORT
       LAYER met3 ;
-        RECT 0.000 139.440 4.000 140.040 ;
+        RECT 0.000 132.640 4.000 133.240 ;
     END
   END key_pressed
   PIN nRST
     DIRECTION INPUT ;
     USE SIGNAL ;
-    ANTENNAGATEAREA 0.213000 ;
+    ANTENNAGATEAREA 0.126000 ;
     PORT
       LAYER met3 ;
-        RECT 214.065 27.240 218.065 27.840 ;
+        RECT 214.215 17.040 218.215 17.640 ;
     END
   END nRST
   OBS
@@ -332,67 +332,68 @@ MACRO calculator_top
       LAYER li1 ;
         RECT 5.520 10.795 212.520 217.685 ;
       LAYER met1 ;
-        RECT 0.530 10.640 212.520 217.840 ;
+        RECT 4.210 10.640 212.820 217.840 ;
       LAYER met2 ;
-        RECT 0.550 224.505 99.630 225.490 ;
-        RECT 100.470 224.505 102.850 225.490 ;
-        RECT 103.690 224.505 106.070 225.490 ;
-        RECT 106.910 224.505 112.510 225.490 ;
-        RECT 113.350 224.505 118.950 225.490 ;
-        RECT 119.790 224.505 211.500 225.490 ;
-        RECT 0.550 4.280 211.500 224.505 ;
-        RECT 0.550 4.000 57.770 4.280 ;
-        RECT 58.610 4.000 211.500 4.280 ;
+        RECT 4.230 224.655 86.750 225.490 ;
+        RECT 87.590 224.655 96.410 225.490 ;
+        RECT 97.250 224.655 99.630 225.490 ;
+        RECT 100.470 224.655 102.850 225.490 ;
+        RECT 103.690 224.655 112.510 225.490 ;
+        RECT 113.350 224.655 115.730 225.490 ;
+        RECT 116.570 224.655 125.390 225.490 ;
+        RECT 126.230 224.655 144.710 225.490 ;
+        RECT 145.550 224.655 211.050 225.490 ;
+        RECT 4.230 4.280 211.050 224.655 ;
+        RECT 4.230 4.000 57.770 4.280 ;
+        RECT 58.610 4.000 211.050 4.280 ;
       LAYER met3 ;
-        RECT 0.525 211.840 214.065 217.765 ;
-        RECT 4.400 210.440 214.065 211.840 ;
-        RECT 0.525 150.640 214.065 210.440 ;
-        RECT 0.525 149.240 213.665 150.640 ;
-        RECT 0.525 147.240 214.065 149.240 ;
-        RECT 0.525 145.840 213.665 147.240 ;
-        RECT 0.525 143.840 214.065 145.840 ;
-        RECT 0.525 142.440 213.665 143.840 ;
-        RECT 0.525 140.440 214.065 142.440 ;
-        RECT 4.400 139.040 213.665 140.440 ;
-        RECT 0.525 137.040 214.065 139.040 ;
-        RECT 0.525 135.640 213.665 137.040 ;
-        RECT 0.525 133.640 214.065 135.640 ;
-        RECT 0.525 132.240 213.665 133.640 ;
-        RECT 0.525 130.240 214.065 132.240 ;
-        RECT 4.400 128.840 213.665 130.240 ;
-        RECT 0.525 126.840 214.065 128.840 ;
-        RECT 4.400 125.440 213.665 126.840 ;
-        RECT 0.525 123.440 214.065 125.440 ;
-        RECT 0.525 122.040 213.665 123.440 ;
-        RECT 0.525 120.040 214.065 122.040 ;
-        RECT 0.525 118.640 213.665 120.040 ;
-        RECT 0.525 116.640 214.065 118.640 ;
-        RECT 4.400 115.240 213.665 116.640 ;
-        RECT 0.525 113.240 214.065 115.240 ;
-        RECT 4.400 111.840 214.065 113.240 ;
-        RECT 0.525 89.440 214.065 111.840 ;
-        RECT 4.400 88.040 214.065 89.440 ;
-        RECT 0.525 86.040 214.065 88.040 ;
-        RECT 4.400 84.640 214.065 86.040 ;
-        RECT 0.525 79.240 214.065 84.640 ;
-        RECT 4.400 77.840 214.065 79.240 ;
-        RECT 0.525 75.840 214.065 77.840 ;
-        RECT 4.400 74.440 214.065 75.840 ;
-        RECT 0.525 65.640 214.065 74.440 ;
-        RECT 4.400 64.240 214.065 65.640 ;
-        RECT 0.525 62.240 214.065 64.240 ;
-        RECT 4.400 60.840 214.065 62.240 ;
-        RECT 0.525 58.840 214.065 60.840 ;
-        RECT 4.400 57.440 214.065 58.840 ;
-        RECT 0.525 28.240 214.065 57.440 ;
-        RECT 0.525 26.840 213.665 28.240 ;
-        RECT 0.525 10.715 214.065 26.840 ;
+        RECT 3.990 208.440 214.215 217.765 ;
+        RECT 4.400 207.040 214.215 208.440 ;
+        RECT 3.990 157.440 214.215 207.040 ;
+        RECT 3.990 156.040 213.815 157.440 ;
+        RECT 3.990 147.240 214.215 156.040 ;
+        RECT 3.990 145.840 213.815 147.240 ;
+        RECT 3.990 143.840 214.215 145.840 ;
+        RECT 3.990 142.440 213.815 143.840 ;
+        RECT 3.990 140.440 214.215 142.440 ;
+        RECT 3.990 139.040 213.815 140.440 ;
+        RECT 3.990 137.040 214.215 139.040 ;
+        RECT 3.990 135.640 213.815 137.040 ;
+        RECT 3.990 133.640 214.215 135.640 ;
+        RECT 4.400 132.240 213.815 133.640 ;
+        RECT 3.990 130.240 214.215 132.240 ;
+        RECT 3.990 128.840 213.815 130.240 ;
+        RECT 3.990 126.840 214.215 128.840 ;
+        RECT 3.990 125.440 213.815 126.840 ;
+        RECT 3.990 123.440 214.215 125.440 ;
+        RECT 3.990 122.040 213.815 123.440 ;
+        RECT 3.990 113.240 214.215 122.040 ;
+        RECT 4.400 111.840 214.215 113.240 ;
+        RECT 3.990 109.840 214.215 111.840 ;
+        RECT 4.400 108.440 214.215 109.840 ;
+        RECT 3.990 106.440 214.215 108.440 ;
+        RECT 4.400 105.040 214.215 106.440 ;
+        RECT 3.990 89.440 214.215 105.040 ;
+        RECT 4.400 88.040 214.215 89.440 ;
+        RECT 3.990 86.040 214.215 88.040 ;
+        RECT 4.400 84.640 214.215 86.040 ;
+        RECT 3.990 79.240 214.215 84.640 ;
+        RECT 4.400 77.840 214.215 79.240 ;
+        RECT 3.990 75.840 214.215 77.840 ;
+        RECT 4.400 74.440 214.215 75.840 ;
+        RECT 3.990 62.240 214.215 74.440 ;
+        RECT 4.400 60.840 214.215 62.240 ;
+        RECT 3.990 58.840 214.215 60.840 ;
+        RECT 4.400 57.440 214.215 58.840 ;
+        RECT 3.990 55.440 214.215 57.440 ;
+        RECT 4.400 54.040 214.215 55.440 ;
+        RECT 3.990 18.040 214.215 54.040 ;
+        RECT 3.990 16.640 213.815 18.040 ;
+        RECT 3.990 10.715 214.215 16.640 ;
       LAYER met4 ;
-        RECT 85.855 54.575 174.240 194.305 ;
-        RECT 176.640 54.575 177.540 194.305 ;
-        RECT 179.940 54.575 201.185 194.305 ;
-      LAYER met5 ;
-        RECT 114.660 136.900 194.460 138.500 ;
+        RECT 26.975 68.175 174.240 214.705 ;
+        RECT 176.640 68.175 177.540 214.705 ;
+        RECT 179.940 68.175 191.065 214.705 ;
   END
 END calculator_top
 END LIBRARY
