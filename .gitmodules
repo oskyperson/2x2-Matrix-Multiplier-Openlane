@@ -9,3 +9,7 @@
 [submodule "verilog/rtl/audio_synthesizer"]
 	path = verilog/rtl/audio_synthesizer
 	url = git@github.com:Purdue-SoCET/AudioSynthesizer.git
+
+[submodule "verilog/rtl/calculator_top"]
+	path = verilog/rtl/calculator_top
+	url = git@github.com:Purdue-SoCET/CALC-Intro-2.git

@@ -1,0 +1,16 @@
+{
+    "//": "Basics", 
+    "DESIGN_NAME": "calculator_top",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/calculator_top/source/calculator_top.sv",
+        "dir::../../verilog/rtl/calculator_top/source/gencon.sv",
+        "dir::../../verilog/rtl/calculator_top/source/gencon_defs.sv",
+        "dir::../../verilog/rtl/calculator_top/source/addition.sv",
+        "dir::../../verilog/rtl/calculator_top/source/multiply.sv",
+        "dir::../../verilog/rtl/calculator_top/source/input_control.sv"
+
+    ],
+    "CLOCK_PORT": "clk",
+    "CLOCK_PERIOD": 50
+
+}
