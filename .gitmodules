@@ -5,3 +5,7 @@
 [submodule "verilog/rtl/matrix_mult"]
 	path = verilog/rtl/matrix_mult
 	url = git@github.com:Purdue-SoCET/MatrixMult.git
+
+[submodule "verilog/rtl/audio_synthesizer"]
+	path = verilog/rtl/audio_synthesizer
+	url = git@github.com:Purdue-SoCET/AudioSynthesizer.git

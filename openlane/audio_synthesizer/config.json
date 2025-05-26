@@ -1,0 +1,25 @@
+{
+    "//": "Basics",
+    "DESIGN_NAME": "top",
+    "VERILOG_FILES": [
+        "dir::../../verilog/rtl/audio_synthesizer/source/clock_divider.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/frequency_LUT.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/FSM.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/keypad_encoder.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/oscillator.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/pwm.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/sequential_divider.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/waveshaper_wrap.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/waveshaper.sv",
+        "dir::../../verilog/rtl/audio_synthesizer/source/top.sv"
+
+    ],
+    "CLOCK_PERIOD": 20,
+    "CLOCK_PORT": "clk",
+
+    "//": "Core Utilization Percentage",
+    "FP_CORE_UTIL": 40,
+
+    "//": "Limits layers to use",
+    "FP_PDN_MULTILAYER": false
+}
