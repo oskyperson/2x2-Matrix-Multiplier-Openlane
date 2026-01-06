@@ -1,0 +1,38 @@
+{
+    "//": "Basics",
+    "DESIGN_NAME": "matrix_multiplier",
+    "VERILOG_FILES":[
+        "dir::../../verilog/rtl/matrix_multiplier/adder16.sv", 
+        "dir::../../verilog/rtl/matrix_multiplier/adder17.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/alu.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/dadda.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/fsm.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/full_adder.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/half_adder.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/matmult.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/memory.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/partial_products.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/rca4.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/reduce.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/spi.sv",
+        "dir::../../verilog/rtl/matrix_multiplier/matrix_multiplier.sv"
+    ],
+    "CLOCK_PERIOD": 25,
+    "CLOCK_PORT": "hz100", 
+
+    "//": "Set die area", 
+    "FP_SIZING": "relative",
+
+    "//": "Core Utilization Percentage",
+    "FP_CORE_UTIL": 50,
+
+    "//": "Limits layers to use",
+    "FP_PDN_MULTILAYER": false,
+
+    "//": "Power pins",
+    "VDD_NETS": "VPWR",
+    "GND_NETS": "VGND", 
+
+    "//": "Relax transition constraint", 
+    "MAX_TRANSITION_CONSTRAINT": 0.4
+}
