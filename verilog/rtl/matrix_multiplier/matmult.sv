@@ -12,11 +12,10 @@ module matmult (
     output logic miso,
     input logic rst,
     output logic ready,
-
     output logic transaction_ready,
     output logic calc_done,
-    output logic [7:0] left,
-    output logic [17:0] result
+    //output logic [7:0] left,
+    //output logic [17:0] result
    
   // I/O ports
   /*input  logic hz100, reset,
@@ -35,8 +34,8 @@ module matmult (
 );
   // Your code goes here...
 
-
-   
+    logic [7:0] left;
+    logic [17:0] result;
     logic [1:0] sel, addr;
     logic wr;
     logic [17:0] mem_out;
